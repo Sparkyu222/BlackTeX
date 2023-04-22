@@ -328,7 +328,7 @@ int main (int argc, char *argv[]) {
 
                         }
 
-                        buffer << "\\xskakcomment{\\small\\texttt\\justifying{\\textcolor{gray}{Variant n°" << varcount << ": ";
+                        buffer << "\\xskakcomment{\\small\\texttt\\justifying{\\textcolor{gray}{Variation n°" << varcount << ": ";
                         varcount++;
 
                         multvar = true;
@@ -336,7 +336,7 @@ int main (int argc, char *argv[]) {
                     // Si il n'y a qu'une seule variation dans le half-move
                     } else {
 
-                            buffer << "\\xskakcomment{\\small\\texttt\\justifying{\\textcolor{gray}{Variant : ";
+                            buffer << "\\xskakcomment{\\small\\texttt\\justifying{\\textcolor{gray}{Variation : ";
 
                     }
 
