@@ -1,0 +1,510 @@
+[Event "Hastings"]
+[Site "Hastings ENG"]
+[Date "1895.08.17"]
+[Round "10"]
+[White "Wilhelm Steinitz"]
+[Black "Curt von Bardeleben"]
+[Result "1-0"]
+[ECO "C54"]
+[PlyCount "69"]
+[EventDate "1895.08.05"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 {
+[pgndiagram] Sharp gambits such as this one were quite popular in the 19th
+century.} d5 {Not a critical reply} (7... Nxe4 {"The best way of refuting a
+gambit is to accept it"} 8. O-O Bxc3 {And now White has a choice} (8... Nxc3 9.
+bxc3 Bxc3 10. Qb3 {Is very dangerous for Black}) 9. bxc3 {[pgndiagram] And the
+tabiya of the variation is reached} (9. d5 $5 {Is probably playable,
+especially if Black doesn't know what he is doing}) 9... d5 (9... Nxc3 10. Qe1+
+) 10. Bd3) 8. exd5 {Now White has the initiative} Nxd5 9. O-O Be6 (9... Bxc3 {
+Here Black can't go for the pawn} 10. bxc3 Nxc3 {loses to} 11. Qe1+) (9... Nxc3
+{Again loses to} 10. bxc3 Bxc3 11. Qb3) 10. Bg5 Be7 (10... Qd7 {Was arguably
+better} 11. Nxd5 Bxd5 12. Qb3 Bxf3 {[pgndiagram]} (12... Bxc4 13. Qxc4 O-O 14.
+d5) 13. Qxf3 O-O {And Black will have to suffer, but his position is
+definitely defensible}) 11. Bxd5 $1 {[pgndiagram] A very counterintuitive
+exchange. You can feel the understanding Steinitz had for the game from moves
+like these. His games are full of deep strategic ideas.} Bxd5 {The right
+recapture} (11... Bxg5 {Is horrible for Black} 12. Bxe6 fxe6 13. d5 {And Black
+is close to being lose} exd5 14. Re1+ Kf7 15. Nxd5 {[pgndiagram] With such a
+king and undeveloped rooks, Black is doomed}) 12. Nxd5 Qxd5 $1 {Once again the
+right choice} (12... Bxg5 {Is bad due to} 13. Re1+ {The most clear cut} (13.
+Nxg5 {But not} Qxd5) (13. Nxc7+ {Wins a pawn} Qxc7 14. Nxg5) 13... Be7 14. Qb3
+{[pgndiagram] And White has a winning position. Here it pays not to go for an
+endgame, but to continue building up some pressure}) 13. Bxe7 Nxe7 14. Re1 {
+[pgndiagram] If only Black could castle, he would have no problems whatsoever.
+As it is, White has the initiative} f6 (14... Qd7 {Would allow the extra tempo
+on the knight} 15. Ne5 Qd8 16. Qf3 {And White is winning}) (14... Qd6 {Would
+likely transpose, although the queen on d6 is subjecto to knight attack from
+e4 or c4} 15. Qe2 f6) 15. Qe2 Qd7 16. Rac1 $2 {[pgndiagram] So far the game
+has been of a rather high quality. This move releases the tension} (16. d5 Kf7
+17. Rad1 {With the idea of d6 push would maintain White's initiative}) 16... c6
+$2 {And immediately Bardeleben returns the favour} (16... Kf7 {Was correct.
+Black shouldn't have feared the potential sacrifice of the knight} 17. Ne5+
+fxe5 18. dxe5 Qe6 19. Qf3+ Kg8 20. Rxc7 {[pgndiagram] Although this is highly
+unpleasant, he should be able to unravel his forces and fight for the draw})
+17. d5 $1 {[pgndiagram] A thematic clearance move.Now White is winning. The
+way Steinitz concludes the game is highly spectacular} cxd5 18. Nd4 {The
+knight is coming to e6 with great effect} Kf7 19. Ne6 Rhc8 (19... Nc6 {Was no
+better, due to the weakness of d5 pawn} 20. Nc5 Qd6 (20... Qc7 21. Qh5+ {Wins
+immediately}) 21. Nxb7 Qd7 22. Nc5 {And White retains the dominating position})
+20. Qg4 {Now the g7 also is weak} g6 21. Ng5+ $1 {[pgndiagram] A highly
+attractive finish and one of the most remarkable combinations in the history
+of chess.} Ke8 22. Rxe7+ $3 {A fantastic blow. At first sight it seems that
+White will overextend himself, because his back rank is weak. But Steinitz has
+calculted everything precisely} Kf8 $1 {[pgndiagram] The best chance} (22...
+Kxe7 23. Qb4+ {Wins} Ke8 24. Re1+ {[pgndiagram]} Kd8 25. Ne6+ {And Black has
+to give up his queen due to mate on f8. And luckily for him, White has Re1 to
+prevent back rank mate after he takes on e6} Qxe6 26. Rxe6 Rc1+ 27. Re1) 23.
+Rf7+ $1 {The combination continues} Kg8 24. Rg7+ {Naturally, now Black can't
+take the rook on g7 due to capture on d7 with check} Kh8 25. Rxh7+ {
+[pgndiagram] Here Bardeleben left the game. Steinitz willingly demonstrated
+the spectators what awaited his opponent had he continued the game} Kg8 26.
+Rg7+ Kh8 (26... Kf8 27. Nh7+) 27. Qh4+ Kxg7 28. Qh7+ Kf8 29. Qh8+ Ke7 30. Qg7+
+Ke8 31. Qg8+ Ke7 32. Qf7+ Kd8 33. Qf8+ Qe8 34. Nf7+ Kd7 35. Qd6# {[pgndiagram]
+And at the end of the story, everything concludes with an epaulette mate.
+Fantastic} 1-0
+
+[Event "Steinitz - Chigorin World Championship "]
+[Site "Havana CUB"]
+[Date "1892.01.07"]
+[Round "4"]
+[White "Wilhelm Steinitz"]
+[Black "Mikhail Chigorin"]
+[Result "1-0"]
+[ECO "C65"]
+[PlyCount "57"]
+[EventDate "1892.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 {[pgndiagram] The way of avoiding Berlin
+even in the 19th century.} d6 5. c3 g6 {The fianchetto against d3 and c3 is
+encountered even today on an occasion.} 6. Nbd2 Bg7 7. Nf1 {But I am not a big
+fan of this move. White violates one of the basic principles of not moving the
+same piece twice in the opening.  Although the position is somewhat slow and
+closed enough, I think that he loses some of his flexibility; the knight might
+take the alternative Nc3-Ne3 route in the future if neccessary.} (7. O-O {
+Seems more natural}) 7... O-O 8. Ba4 $6 {But this loses another tempo} (8. Ng3
+{Was more consistent} a6 9. Ba4 b5 10. Bc2 Re8 {And typical Ruy Lopez struggle
+lays ahead}) 8... Nd7 $6 {[pgndiagram] Chigorin also moves his knight via c5
+to e6, but this removes the knight from the kingside and loses time.} (8... d5
+{Was possible, exploiting White's delay in the opening.} 9. Bxc6 {The point is
+that White can't really capture the pawn on e5} bxc6 10. Nxe5 Re8 {And White
+is too underdeveloped. Black has fantastic compensation and is probably even
+close to winning.}) 9. Ne3 $6 (9. Ng3 {Was probably better, in order to
+discourage the f5 idea. The point is that on g3 knight doesn't block the
+bishop; the g5 square is defended} f5 10. exf5 gxf5 11. Bb3+ Kh8 12. Ng5 {
+[pgndiagram] And Black is in trouble}) 9... Nc5 $6 {Chasing the bishop where
+it wants to go} (9... f5 {Was now interesting}) 10. Bc2 Ne6 11. h4 $1 {
+[pgndiagram] Great understanding of the game by Steinitz. He recognizes that
+Black is not in control in the centre, so he begins a wing attack} Ne7 $2 {And
+immediately there comes a mistake. Chigorin plays according to the principles
+of the old school: attack on a flank should be countered by the centar blow.
+However, White's centre is very stable here} (11... h5 {Was the way to go,
+although they simply didn't move pawns in front of their king in those times.})
+12. h5 d5 13. hxg6 fxg6 (13... hxg6 {Leads by force to a dominating endgame
+for White} 14. Ng4 (14. exd5 Nxd5 15. Nxd5 Qxd5 {Is not that convincing any
+more}) 14... dxe4 15. dxe4 Qxd1+ 16. Bxd1 Nc6 17. Nh6+ Bxh6 18. Bxh6 Re8 19.
+Bc2 {[pgndiagram] And White is playing for two results only}) 14. exd5 Nxd5 15.
+Nxd5 Qxd5 16. Bb3 {[pgndiagram] The b3-g8 diagonal is weak and Steinitz
+immediately takes advantage of that} Qc6 17. Qe2 Bd7 18. Be3 Kh8 19. O-O-O Rae8
+20. Qf1 $5 {Removing the queen from the bishop battery and preparing the d4
+advance. This move is fantastic even if it objectively isn't the best} a5 $2 {
+The final mistake.} (20... h5 {Black should have taken measures on the
+kingside. This move counters White's prepared combination and allows Black to
+successfuly defend}) 21. d4 $1 {Now Steinitz carries out another remarkable
+combination} exd4 22. Nxd4 Bxd4 {[pgndiagram] The spectacular finish is near.
+It is a great exercise to stop here and try to find the winning combination on
+your own} 23. Rxd4 $1 Nxd4 24. Rxh7+ $3 {[pgndiagram] Black gets mated} Kxh7
+25. Qh1+ Kg7 26. Bh6+ Kf6 27. Qh4+ Ke5 28. Qxd4+ {And here Chigorin resigned,
+one move before checkmate} Kf5 29. g4# {[pgndiagram] A celebrated game that
+demonstrated that in strategical positions Chigorin couldn't compete with
+Steinitz on equal terms.} 1-0
+
+[Event "London"]
+[Site "London"]
+[Date "1862.??.??"]
+[Round "?"]
+[White "Wilhelm Steinitz"]
+[Black "Augustus Mongredien"]
+[Result "1-0"]
+[ECO "B01"]
+[PlyCount "57"]
+[EventDate "1862.??.??"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 $5 {[pgndiagram] It is interesting to see
+this line of Scandinavian in a game from 1862.} 4. d4 e6 {I am not an expert
+on this variation, but I believe that Black should consider playing some other
+moves and wait for an opportunity to pin the knight on f3. Here his light
+squared bishop will remain a problem piece} (4... Nf6 5. Nf3 Bg4 {Comes to
+mind. Although to be honest, I only have a vague idea about this variation
+from the videos by IM John Bartholomew on youtube}) 5. Nf3 Nf6 6. Bd3 Be7 (6...
+c5 {Transposes to the position from the French defense where Black is a tempo
+down} 7. O-O cxd4 8. Nxd4) 7. O-O O-O 8. Be3 {[pgndiagram] I am not certain
+about this move. It does develop a piece, but the bishop on e3 is not optimal.}
+(8. Ne4 {Waiting with the bishop, seems to me to be  more in the spirit of the
+position.} Nxe4 9. Bxe4 Nd7 10. c3 Nf6 11. Bc2 {[pgndiagram] And White retains
+the advantage}) 8... b6 9. Ne5 Bb7 10. f4 {Steinitz goes all in, but Black
+could have defended} Nbd7 (10... Nc6 {Attacking d4 and threatening Nb4, was
+interesting} 11. Be2 (11. a3 Nxd4 12. Bxh7+ Kxh7 13. Bxd4 Kg8 {[pgndiagram]
+And Black is better}) 11... Nb4 12. Bf3 Bxf3 13. Rxf3 c5 {And Black has
+equalized. White has no attack}) 11. Qe2 Nd5 (11... c5 {Was probably better
+than the game continuation}) 12. Nxd5 exd5 (12... Bxd5 13. f5 {Gives White a
+nice attack}) 13. Rf3 {Now White's pieces enjoy excellent prospects} f5 {Not a
+move made willingly} (13... Nf6 14. Rh3 {White threatens a sacrifice on h7} Qd6
+(14... c5 15. Bxh7+ Nxh7 16. Qh5 {Is winning}) 15. c3 c5 16. f5 Rae8 17. Rg3 {
+[pgndiagram] And White has a strong attack}) 14. Rh3 (14. Rg3 {Computer
+indicates that this is the stronger continuation of attack.} g6 (14... c5 15.
+Qh5) 15. Nxg6 {This is the point. White prevents g6 and includes his queen in
+the attack as well}) 14... g6 {Black has to prevent the move Qh5} (14... Nxe5
+15. fxe5 c5 16. Qh5 h6 17. Rg3) (14... c5 15. Qh5 h6 16. Rg3) 15. g4 $1 {Going
+for it. The computer doesn't like this move, but for a human this is very
+attractive} fxg4 $4 {[pgndiagram] And immediately there comes a big mistake,
+which loses} (15... Nxe5 16. dxe5 (16. fxe5 f4) 16... d4 17. gxf5 (17. Bd2 Qd7)
+17... dxe3 18. fxg6 {[pgndiagram] And here it is possible for Black to survive
+with a series of only moves} Rxf4 $1 (18... Qd5 19. Bc4) 19. Rxh7 Qd5 20. Rh8+
+Kg7 (20... Kxh8 21. Qh5+) 21. Rh7+ Kg8 {And in the end, everything ends with a
+perpetual check}) 16. Rxh7 $1 {[pgndiagram] A brilliant conception and another
+rook sacrifice on h7} Nxe5 (16... Kxh7 17. Qxg4 {And Black can't defend} Nxe5
+18. fxe5 Qe8 19. Qh5+ Kg7 20. Qh6+ Kg8 21. Bxg6 {And wins}) 17. fxe5 Kxh7 (
+17... Bg5 {Is another way of losing, in technical instead of the tactical way}
+18. Bxg6 Rf3 19. Bf2) 18. Qxg4 {[pgndiagram] We have transposed to the
+previously examined variation} Rg8 {Losing even faster than 18... Qe8} 19. Qh5+
+Kg7 20. Qh6+ Kf7 21. Qh7+ Ke6 22. Qh3+ Kf7 23. Rf1+ Ke8 24. Qe6 Rg7 25. Bg5 Qd7
+26. Bxg6+ Rxg6 27. Qxg6+ Kd8 28. Rf8+ Qe8 29. Qxe8# {[pgndiagram] A very nice
+tactical bloodbath, although it is apparent that Steinitz's play was less
+strategicaly founded (after all it was year 1862). Compared to the previous
+two games, he went all in in this one, but the tactical finish was allowed
+only by his opponent's mistakes; they didn't result from his strategical
+superiority.} 1-0
+
+[Event "London (England)"]
+[Site "London (England)"]
+[Date "1863.??.??"]
+[Round "?"]
+[White "Wilhelm Steinitz"]
+[Black "Augustus Mongredien"]
+[Result "1-0"]
+[ECO "B06"]
+[PlyCount "43"]
+[EventDate "1863.??.??"]
+
+1. e4 g6 {I have chosen this game only because it featured the modern defence}
+2. d4 Bg7 3. c3 {This move is death for every Modern player} b6 $5 {And with
+this we have entered the uncharted waters.} 4. Be3 $5 {I think that
+combination of Be3 and c3 is not good. The d4 square is safe enough. On e3
+bishop might become a subject of the Ng4 in the future} Bb7 5. Nd2 d6 6. Ngf3
+e5 {[pgndiagram] Generally speaking, the combination of the queenside
+fianchetto together with the e5 advance should be condemned.} (6... Nd7 7. Bd3
+Ngf6 {Might be wiser. Developing first and only then advancing}) 7. dxe5 dxe5
+8. Bc4 {Now Black can't play Nf6 and has some tactical problems as well} Ne7 $2
+{The losing move} (8... Nd7 {Was the best, trying to develop} 9. Ng5 Nh6 10.
+O-O Qe7 11. b4 {And Black is on the back foot, but nothing is over}) 9. Qe2 $2
+(9. Bxf7+ {Was winning immediately} Kxf7 10. Qb3+ Kf8 11. Ng5 Qe8 12. Ne6+ {
+[pgndiagram] And White is winning}) 9... O-O $6 {another mistake. Castling
+without the knight on f6 and with the rook on h1 is very dangerous} (9... Nc8 {
+Is computer's idea, trying to place the knight on d6} 10. O-O-O Nd6 11. h4 {
+And White is better, but not as much as in the game}) 10. h4 {[pgndiagram] A
+familiar advance of Harry the h-pawn} Nd7 (10... h5 {Was no good here} 11. g4
+hxg4 12. Nh2 {And White is going to break through}) 11. h5 {White has a
+decisive attack} Nf6 12. hxg6 (12. Nxe5 {Was stronger} Nxh5 13. g4 Bxe5 14.
+gxh5 {And Black is in deep trouble}) 12... Nxg6 $1 {Defending the e-pawn} (
+12... hxg6 13. Nxe5) 13. O-O-O c5 14. Ng5 a6 $2 {A final mistake of the game}
+15. Nxh7 $3 {[pgndiagram] Another sacrifice on h7 and another correct one} Nxh7
+16. Rxh7 (16. Qh5 Nf6 17. Qxg6 {Was more precise, but White is winning all the
+same}) 16... Kxh7 17. Qh5+ Kg8 18. Rh1 Re8 19. Qxg6 Qf6 20. Bxf7+ Qxf7 (20...
+Kf8 {[pgndiagram] Also doesn't help} 21. Bxe8 Rxe8 22. Rh8+ Bxh8 23. Bh6+ Ke7
+24. Bg5 {Is game over}) 21. Rh8+ {[pgndiagram]A finishing touch. White wins
+the queen and the game} Kxh8 22. Qxf7 1-0
+
+[Event "Anderssen - Steinitz"]
+[Site "London ENG"]
+[Date "1866.08.08"]
+[Round "13"]
+[White "Adolf Anderssen"]
+[Black "Wilhelm Steinitz"]
+[Result "0-1"]
+[ECO "C65"]
+[PlyCount "86"]
+[EventDate "1866.07.18"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 d6 5. Bxc6+ bxc6 6. h3 g6 {[pgndiagram]
+These Anti-Berlin lines with kingside fianchetto were championed successfully
+by Steinitz} 7. Nc3 Bg7 8. O-O O-O 9. Bg5 h6 10. Be3 c5 11. Rb1 Ne8 12. b4 $1 {
+[pgndiagram] A very modern interpretation of the opening for those years.
+White recognizes that he has to play on the queenside and decides to undouble
+the adversary pawns in order to open a file for his rook} cxb4 13. Rxb4 c5 14.
+Ra4 $6 {Only this is slightly misguided. White removes his rook from the open
+file} (14. Rb1 f5 15. Re1 f4 16. Bd2 {Is better, although from the practical
+point of view, Black's position is much easier to play}) 14... Bd7 15. Ra3 f5
+16. Qb1 Kh8 $6 (16... Nc7 $5 {Preventing Qb7, came into consideration} 17. Qb7)
+17. Qb7 a5 18. Rb1 a4 19. Qd5 $2 {[pgndiagram] From this moment onwards,
+White's game starts going downhill rapidly. His pieces are stuck on the
+queenside and are unable to join the kingside and defend the king} (19. Qb6 {
+Going for the queen exchange, was better. Black can't really avoid it} Qxb6 (
+19... Qe7 20. Nd5 Qf7 21. Qb7 {And now Black's pieces are not coordinated}) 20.
+Rxb6) 19... Qc8 20. Rb6 Ra7 21. Kh2 f4 $1 {[pgndiagram] Black finally decides
+on this move. He will soon set his pawn chain in motion, and alraedy it is
+very hard to suggest how White should counter that plan} 22. Bd2 g5 23. Qc4 Qd8
+{Defending g5 and intending h5} 24. Rb1 $2 {Going from frying pan to fire} (24.
+Nd5 {White had to seek tactical countermeasures. The point of this knight jump
+is to open the diagonal for the slumbering bishop on d2} h5 25. Ra6 Rxa6 26.
+Qxa6 g4 27. Ba5 Qb8 28. Nh4 {[pgndiagram] And White retains chances of
+successful defence}) 24... Nf6 {But anyway, White's position is unpleasant} 25.
+Kg1 (25. Nxa4 Qe8) 25... Nh7 $5 {h5-g4 is coming soon} 26. Kf1 $6 {White can't
+escape with the king} (26. Qd5 {Was the last chance} Be8 {Keeping a4 defended}
+27. Nb5 Ra6 28. Nh2 h5 {And Black has the initiative, but White can try to put
+up some resistance}) 26... h5 27. Ng1 g4 {[pgndiagram] Now Black's attack is
+simply irresistible} 28. hxg4 (28. f3 {Is also hopeless} gxh3 29. gxh3 Rg8)
+28... hxg4 29. f3 Qh4 30. Nd1 Ng5 {[pgndiagram] All Black's pieces join the
+attack and White doesn't have enough space to bring in his reserves.} 31. Be1
+Qh2 32. d4 {This merely hastens the end, but White was doomed anyway. The rest
+doesn't require any commentary} gxf3 33. gxf3 Nh3 34. Bf2 Nxg1 35. dxc5 Qh3+
+36. Ke1 Nxf3+ 37. Rxf3 Qxf3 38. Nc3 dxc5 39. Bxc5 Rc7 40. Nd5 Rxc5 41. Qxc5
+Qxe4+ 42. Kf2 Rc8 43. Nc7 Qe3+ {[pgndiagram] A fantastic win, demonstrating
+Steinitz's superiority over his contemporaries in the strategical positions}
+0-1
+
+[Event "Steinitz - Blackburne"]
+[Site "London ENG"]
+[Date "1876.02.29"]
+[Round "6"]
+[White "Joseph Henry Blackburne"]
+[Black "Wilhelm Steinitz"]
+[Result "0-1"]
+[ECO "C45"]
+[PlyCount "132"]
+[EventDate "1876.02.17"]
+
+1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 {[pgndiagram] This variation of the
+Scotch defence is nowadays considered dangerous. But Steinitz simply grabs the
+pawn and defends it for the remainder of the game.} 5. Nb5 (5. Nc3 {Is the
+modern move} Bb4 6. Be2 Qxe4 7. Ndb5 Bxc3+ 8. bxc3 Kd8 {[pgndiagram] And this
+is the modern tabiya of the variation. Black has to be careful}) 5... Bb4+ 6.
+Bd2 Qxe4+ 7. Be2 Kd8 {[pgndiagram] Black has given up a pawn for the right to
+castle. Objectively speaking, White should have decent compensation for the
+pawn, but it is not so easy to prove it.} 8. O-O Bxd2 9. Qxd2 (9. Nxd2 {
+Already here, what could be more natural than bringing another piece in the
+game?} Qf5 10. Nf3 d6 11. Nbd4 {[pgndiagram] And White's position is preferable
+}) 9... a6 {Now Black has time to chase the knight away from d4} 10. N5a3 $6 (
+10. N1c3 {Was better, not allowing Qd4} Qh4 11. Na3 d6 (11... b5 12. Nd5))
+10... Qd4 11. Qg5+ Qf6 12. Qd2 $2 {[pgndiagram] Giving another pawn away is
+too much} (12. Qc1 {Is ugly, but neccessary. It is clear that White has lost
+the thread and that Black is taking over, but the game continues}) 12... Qxb2
+13. Nc4 Qd4 $1 (13... Qxa1 14. Nc3 {Would be silly} Qxf1+ 15. Kxf1 Nge7 {And
+Black's position is still better, but his undeveloped state gives White a lot
+of counterplay}) 14. Qc1 $2 Nge7 $2 (14... Qxa1 {Was now possible} 15. Qa3 d6
+16. Nc3 Qxf1+ 17. Kxf1 Nge7 {[pgndiagram] And the queen is sidelined on a3,
+Black has played d6 and he has enough time to consolidate.}) 15. Nbd2 d6 {
+[pgndiagram] Even so, Black has retained the advantage. Two pawns are too much}
+16. Rd1 Be6 17. Qa3 Nd5 18. Nb3 Qc3 19. Bf1 (19. Nxd6 {Was the last chance}
+cxd6 20. Qxd6+ Ke8 21. Rxd5 Bxd5 22. Qxd5 Rd8 23. Qf5 {And an exchange with
+the open king gives some practical chances of salvation}) 19... Ndb4 {
+[pgndiagram]Black has consolidated completely and now only needs to activate
+his rooks} 20. Ne3 Re8 21. Rd2 {Desperation. White embarks on a faulty
+combination} Bxb3 22. Rad1 Rxe3 $1 {[pgndiagram] A nice tactical refutation}
+23. fxe3 Nxc2 24. Qc1 $2 (24. Qxb3 {Was the best, transposing into the lost
+endgame} Qxb3 25. axb3 Nxe3 {And Black is winning. 4 pawns for the exchange
+are simply too much}) 24... Qxe3+ 25. Kh1 Ba4 {[pgndiagram] Now Black is
+easily winning (a piece and four pawns for the rook).} 26. Bc4 N2d4 27. Re1 Qf4
+28. Rf1 Qh6 29. Qb2 Qe3 30. Bxf7 Bb5 31. Rfd1 Nf5 32. a4 Ne5 33. axb5 Nxf7 34.
+Re2 Qh6 35. Qb3 axb5 36. g4 Nd4 37. Rxd4 Ra1+ 38. Kg2 Qf6 39. Rde4 Ne5 40. Rf2
+Qg6 41. Ref4 c6 42. Qe3 Kc7 43. h3 h5 44. Rf5 hxg4 45. Rg5 {[pgndiagram]
+Steinitz has complicated his task somewhat, but here he is clearly winning}
+gxh3+ $4 {But suddenly, this is a huge mistake, after which Black is probably
+not even better} (45... Qh6 $1 {Was easily winning}) 46. Kh2 Ra3 $2 (46... Qe8
+{Was comparatively the best} 47. Rxg7+ Kb8 48. Qd4 Ra4 49. Qxd6+ Ka7 {And it
+is doubtful whether Black can win this position}) 47. Qxe5 $1 dxe5 48. Rxg6 {
+[pgndiagram] Now White is a full rook up and at least shouldn't lose} b4 49.
+Rb2 (49. Rf7+ Kb6 50. Rgxg7 c5 51. Rxb7+ Kc6 52. Rgc7+ Kd5 {[pgndiagram] And
+White has drawing decent drawing chances here}) 49... c5 50. Rf2 Rd3 51. Rc2 $2
+{A step in the wrong direction, enticing Black to make a move he would like to
+do anyway. Also, White pasivizes the rook} (51. Re2 {Forcing Black to defend
+the pawn} Rd5 (51... c4 52. Rxe5 c3 53. Rc5+) 52. Rb2 {And then preventing the
+b-pawn from advancing, was correct}) 51... b6 52. Re6 $2 (52. Rf2 {Was the
+last chance} Rd6 53. Rxg7+ Kc6 54. Kxh3 c4 {Although even here, White's
+position is unenviable}) 52... b3 {With this tempo, Black's pawns are simply
+too strong} 53. Rb2 c4 54. Rxe5 Kc6 55. Rg5 Rd5 56. Rxg7 Kc5 57. Kxh3 Kb4 58.
+Rb1 b5 59. Rg4 Rd2 60. Rg5 b2 61. Kg3 c3 62. Kf3 Kc4 63. Rgg1 Kb3 64. Ke3 Rd8
+65. Rbf1 c2 66. Ke2 Ka2 {[pgndiagram] Despite the error in conversion, this
+was a masterful defensive effort by Steinitz.} 0-1
+
+[Event "Vienna"]
+[Site "Vienna AUT"]
+[Date "1873.08.12"]
+[Round "7.2"]
+[White "Adolf Anderssen"]
+[Black "Wilhelm Steinitz"]
+[Result "0-1"]
+[ECO "C77"]
+[PlyCount "90"]
+[EventDate "1873.07.21"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 {One of the rare instances of Steinitz starting
+with 3.. a6 instead of 3... Nf6 or 3... d6} 4. Ba4 Nf6 5. d3 {But still,
+Anderssen chooses this move, leading to an Anti-Berlin, like position.} d6 6.
+Bxc6+ bxc6 7. h3 g6 {[pgndiagram] And again we have the fianchetto and the
+exhcange on c6, similarly to the previously examined encounter} 8. Nc3 Bg7 9.
+Be3 Rb8 {This time Steinitz doesn't go for c5 but seizes the b-file himself}
+10. b3 c5 11. Qd2 h6 {It is doubtful whether this move is necessary.} (11...
+O-O {And it is doubtful whether White wants to exchange the dark squared
+bishops; he can't follow it up with attack} 12. Bh6 Nh5 13. O-O-O f5) 12. g4 $2
+{[pgndiagram] But this is completely uncalled for} (12. O-O {Was more natural,
+leading to a balanced game} g5 $5 13. a3 g4 14. hxg4 Nxg4 15. b4 {[pgndiagram]
+And the position is unclear}) 12... Ng8 $5 {Very strong play by Steinitz. He
+starts moving his knight toward d4 immediately} (12... h5 {Also came into
+consideration}) 13. O-O-O Ne7 14. Ne2 $6 {This knight is going nowhere.
+Although the position is mildly unpleasant for White, notice how quickly
+Steinitz will outplay his opponent} (14. Rdg1 Nc6 15. h4 Nd4 16. Qd1 Be6 17. h5
+g5 18. Nd2 {Was correct} O-O 19. f3 c6 20. Na4 Qa5 21. Nc4 {[pgndiagram] And
+White is slightly worse but he should be able to hold}) 14... Nc6 15. Qc3 {The
+queen is completely missplaced here} Nd4 16. Nfg1 O-O 17. Ng3 Be6 18. N1e2 Qd7
+19. Bxd4 cxd4 20. Qb2 a5 {[pgndiagram] Black has once again gained a strong
+attack, while White's counterintuitive on the other wing is non existent} 21.
+Kd2 (21. f4 {Was nevertheless better} Qe7 22. f5 Qg5+ 23. Kb1 Bd7 24. Rdf1 {
+With at least some play}) 21... d5 $1 22. f3 Qe7 23. Rdf1 Qb4+ 24. Kd1 a4 25.
+Rh2 c5 26. Nc1 c4 27. a3 Qe7 28. b4 c3 {[pgndiagram] White's queen is
+completely sidelined and Black obtains free hands on the kingside. It is very
+instructive to watch how Steinitz uses his greater control of space to quickly
+shift his attention to the other side of the board} 29. Qa1 Qg5 30. Rff2 f5 31.
+exf5 {[pgndiagram] Opening the kingside. White is completely lost} gxf5 32. h4
+Qg6 33. Nxf5 $2 {Losing immediately} (33. gxf5 {Was slightly more prudent} Bxf5
+34. Nxf5 Rxf5 35. Ne2 {Although even here White is doomed}) 33... Bxf5 34. gxf5
+Rxf5 (34... Qg1+ 35. Ke2 e4 {Would be immediately decisive} 36. fxe4 dxe4 37.
+dxe4 Rbe8) 35. Ne2 Rbf8 36. Qa2 Qf7 37. Rh3 Kh7 38. Ng1 (38. Kc1 {Would
+prolong the resistance}) 38... Bf6 39. Ke2 Rg8 (39... e4 $1) 40. Kf1 Be7 41.
+Ne2 Rh5 (41... Bxh4 $1) 42. f4 Bxh4 43. Rff3 e4 44. dxe4 Qg6 45. Ng3 Bxg3 {
+[pgndiagram] An impressive victory, indicating once again the difference in
+the level of understanding} 0-1
+
+[Event "Steinitz - Zukertort World Championship"]
+[Site "New York, NY USA"]
+[Date "1886.01.11"]
+[Round "1"]
+[White "Johannes Zukertort"]
+[Black "Wilhelm Steinitz"]
+[Result "0-1"]
+[ECO "D11"]
+[PlyCount "92"]
+[EventDate "1886.??.??"]
+
+1. d4 {It was rare to see queen's pawn moving on the first move in those times}
+d5 2. c4 c6 {The Slav! In 1886!} 3. e3 Bf5 4. Nc3 e6 5. Nf3 Nd7 6. a3 $6 {A
+sign of the times. Obviously there is a lot of theory and lot of possibilities.
+I am sure I could write a good book on all the nuances and move orders here.}
+Bd6 $5 {Provoking White's next move} 7. c5 $6 {Tempting but faulty. Black will
+be able to break the bind by the timely e5 move} (7. Be2 {Is more natural} h6 {
+Preventing Nh4 after Nf6} 8. O-O Ngf6 9. b3 {But then the whole point behind
+a3 is gone}) 7... Bc7 8. b4 e5 $1 {Thematic in similar structures. White has a
+bind on the queenside; Black has to break in the centre} 9. Be2 (9. dxe5 {
+[pgndiagram] Was better here, not allowing e4 and freeing the d4 square for
+the knight} Nxe5 10. Nd4 Bd7 11. f4 Ng6 12. Bd3 {With double edged position.
+But this was already too modern for 1886}) 9... Ngf6 10. Bb2 e4 11. Nd2 h5 $5 {
+Steinitz once again plays principled chess. He gains space on the kingside and
+intends to mobilize his every single piece on that area of the board} 12. h3
+Nf8 13. a4 Ng6 14. b5 Nh4 15. g3 Ng2+ $3 {[pgndiagram] To my mind this is a
+fantastic move. Had such a conception been played in the 21st century,
+everyone would assume it was computer preparation. However, it was 1886... 
+Steinitz embarks on a modern knight sacrifice, for which he gains long term
+compensation} 16. Kf1 Nxe3+ $1 {And here we go. Once again we see the concept
+of space advantage utilized. White's pieces, stuck on the queenside will be
+unable to come and defend White's king, who is stuck on the kingside} 17. fxe3
+Bxg3 18. Kg2 Bc7 $2 {[pgndiagram] This is probably faulty retreat, as it gives
+White enough time to organize} (18... h4 19. Nf1 (19. Qf1 {Is now not so good,
+as the king can't escape} Be6) 19... Qb8 {Was strong} 20. Rb1 Bd7 $1 {
+Defending c6} 21. Ba3 Rh6 {And White's position is highly unpleasant}) 19. Qg1
+$2 {Returning the favour} (19. Qf1 {Gaining tempo on the bishop for the
+vacation of the king was required} Be6 20. Kf2 Rh6 21. Ke1 {[pgndiagram] And
+the king escapes}) 19... Rh6 20. Kf1 Rg6 21. Qf2 {[pgndiagram] Now White
+doesn't have enough time. h3 pawn falls as well} Qd7 22. bxc6 bxc6 23. Rg1 {
+White has to part with the h3 pawn} (23. h4 Bh3+ 24. Ke1 Bg3) 23... Bxh3+ 24.
+Ke1 Ng4 {[pgndiagram] And just like that, Black is simply winning. Bear in
+mind that Zuketort was the strongest player apart from Steinitz at that moment.
+} 25. Bxg4 Bxg4 26. Ne2 Qe7 27. Nf4 Rh6 28. Bc3 g5 29. Ne2 Rf6 30. Qg2 {
+[pgndiagram] White is getting steamrolled} Rf3 31. Nf1 Rb8 32. Kd2 f5 (32...
+Bh3 {Was winning immediately} 33. Qxg5 Qxg5 34. Rxg5 Bxf1) 33. a5 f4 34. Rh1
+Qf7 35. Re1 fxe3+ 36. Nxe3 Rf2 37. Qxf2 Qxf2 38. Nxg4 Bf4+ 39. Kc2 hxg4 40. Bd2
+e3 41. Bc1 Qg2 42. Kc3 Kd7 43. Rh7+ Ke6 44. Rh6+ Kf5 45. Bxe3 Bxe3 46. Rf1+ Bf4
+{[pgndiagram] One of the most underestimated games of all time. I have never
+seen it before investigating for the article. Steinitz's conception and
+position queen sacrifice was much ahead of his time.} 0-1
+
+[Event "Steinitz - Zukertort World Championship"]
+[Site "New Orleans, LA USA"]
+[Date "1886.03.24"]
+[Round "19"]
+[White "Johannes Zukertort"]
+[Black "Wilhelm Steinitz"]
+[Result "0-1"]
+[ECO "D53"]
+[PlyCount "58"]
+[EventDate "1886.??.??"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 {[pgndiagram] Steinitz deviates from the Slav
+which had brought him success earlier in the match} 4. Bg5 Be7 5. Nf3 O-O 6. c5
+$2 {[pgndiagram] The best proof that queen's pawn openings were terra
+incognita for Zukertort. This move gives Black immediate targets.} b6 7. b4
+bxc5 $2 {Returning the favour} (7... a5 $1 {Was very strong} 8. a3 Ne4 9. Bxe7
+Qxe7 10. Nxe4 dxe4 11. Ne5 axb4 12. axb4 Rxa1 13. Qxa1 f6 14. Nc4 Nc6 {
+[pgndiagram] And Black is close to winning already}) 8. dxc5 $2 {The errors
+continue} (8. bxc5 {Would give White a playable position} Ne4 9. Bxe7 Qxe7 10.
+Qc2 Nxc3 11. Qxc3) 8... a5 9. a3 d4 $5 {[pgndiagram] Black's position is so
+good, that virtually everything works for him.} (9... Ne4 {This thematic move
+is once again strong}) 10. Bxf6 gxf6 11. Na4 e5 $2 (11... axb4 12. axb4 Bd7 {
+Was winning quickly} 13. Nb2 Nc6) 12. b5 {Now White manages to advance his
+pawns and is probably not even worse} Be6 13. g3 $2 {Probably it was wiser not
+to allow c6} (13. e3 {undermining the centre was decent alternative} dxe3 (
+13... c6 14. exd4) 14. Qc2 exf2+ 15. Kxf2 Nd7 16. Bd3 {[pgndiagram] And Black
+is only slightly better}) 13... c6 14. bxc6 (14. b6 {Would lose the c5 pawn}
+Na6 15. Qc2 Qd5 {And White is lost} 16. Rc1 e4) 14... Nxc6 {[pgndiagram] But
+now once again White's position is highly unpleasant} 15. Bg2 Rb8 {Threatening
+Bb3 and not allowing White to castle} 16. Qc1 (16. Nd2 {Was comparatively
+better} Qc7 17. O-O f5 {Although even here Black retains a large advantage})
+16... d3 {[pgndiagram] Now White gets murdered} 17. e3 e4 18. Nd2 f5 19. O-O
+Re8 20. f3 Nd4 $1 {A nice touch.} 21. exd4 Qxd4+ 22. Kh1 e3 $1 {A cold shower}
+(22... Qxa4 {Possibly Zukertort was hoping for immediate piece recapture} 23.
+fxe4 fxe4 24. Nxe4 Qd4) 23. Nc3 Bf6 $1 {Another strong intermediate move} 24.
+Ndb1 d2 {[pgndiagram] The pawn glide forward.} 25. Qc2 Bb3 26. Qxf5 d1=Q 27.
+Nxd1 Bxd1 28. Nc3 e2 29. Raxd1 Qxc3 {[pgndiagram] A very uneven, irrational
+encounter in which Zukertort lost virtually in the opening.} 0-1
+
+[Event "Steinitz - Zukertort World Championship"]
+[Site "New Orleans, LA USA"]
+[Date "1886.03.29"]
+[Round "20"]
+[White "Wilhelm Steinitz"]
+[Black "Johannes Zukertort"]
+[Result "1-0"]
+[ECO "C25"]
+[PlyCount "37"]
+[EventDate "1886.??.??"]
+
+1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. d4 $1 {Steinitz has developed this audacious
+gambit in his youth. It is interesting to see playing it in the most important
+moment of his career - the World Championship match.} d5 {Playing d5 before
+going for the check is worse, since White can take on f4 now as well} (4...
+Qh4+ 5. Ke2 {[pgndiagram] As Kasparov writes, "Naturally, this gambit is
+nonsense in the modern day chess, but back in the day, opponents had trouble
+refuting it." The present game is the best example}) 5. exd5 {Allowing the
+check, naturally} (5. Bxf4 Bb4 6. exd5 Qxd5 7. Nf3 {Is more normal}) 5... Qh4+
+6. Ke2 Qe7+ 7. Kf2 Qh4+ 8. g3 fxg3+ 9. Kg2 {[pgndiagram] Actually, this way of
+refuting the gambit is probably not the most energetic and Black has to look
+for other possibilities instead of 4 (5).. d5} Nxd4 (9... Bd6 {Might be more
+interesting} 10. dxc6 gxh2 11. Qf3 hxg1=Q+ 12. Kxg1 Qxd4+ 13. Be3 Qf6 {With c
+omplicated position}) 10. hxg3 Qg4 11. Qe1+ $2 {[pgndiagram] This is a bad move
+} (11. Bf4 {Would actually alow White to fight for the advantage} Bc5 (11...
+Qxd1 12. Rxd1 Nxc2 13. Bd3 {Gives him massive lead in development and serious
+compensation for the missing pawns}) 12. Nf3 Nxf3 13. Qxf3 Qxf3+ 14. Kxf3 Nf6
+15. Re1+ Kd8 16. Bd3 {[pgndiagram] And White has sufficient compensation for
+the pawn, but not more than that}) 11... Be7 12. Bd3 {It is important to
+defend the c2 pawn} (12. Rh4 Nxc2) 12... Nf5 $2 {And very quickly there comes
+a serious mistake. Rh4 was threatened and the move defends against that, but
+it disrupts the coordination of the Black's pieces} (12... Kf8 13. Bf4 h5 {
+Playing for the fast h4 was the right way to go}) (12... Nf6 13. Rh4) 13. Nf3
+Bd7 (13... Kf8 {Was slightly more resillient} 14. Bf4 f6 15. Ne4 Ngh6 {And
+White has to find the way to win}) 14. Bf4 {[pgndiagram] Already it is hard to
+find a move for Black. Ne5 is a terrible threat} f6 (14... Nf6 15. Ne5) 15. Ne4
+{Now Nf2 is on the table as well} Ngh6 $2 {A blunder in a lost position} (15...
+O-O-O 16. Qa5) (15... Kf8 16. Nf2 Qg6 17. g4 {[pgndiagram] And White will win
+material} Re8 18. Bxf5 Bxf5 19. Nh4) 16. Bxh6 Nxh6 17. Rxh6 $1 {Winning the
+piece or the queen} gxh6 18. Nxf6+ Kf8 19. Nxg4 {[pgndiagram] An impressive
+victory which allowed Steinitz to capture the crown.} 1-0
+
