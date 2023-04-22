@@ -7,6 +7,6 @@ mkdir -p pgnp/build &&
 cd pgnp/build && cmake ../ && make &&
 
 cd ../../ &&
-mkdir build/
+mkdir build/ &&
 cmake . &&
 make
