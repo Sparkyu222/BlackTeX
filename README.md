@@ -14,9 +14,9 @@ You can also use other options :
 $ blacktex -i <input_file> -o <output_file> -n <counts>
 ```
 > `-i`: specify the input file
-
+> 
 > `-o` : specify the output file
-
+> 
 > `-n` : specify the number of counts before showing the chessboard in the output
 
 #### Building
