@@ -115,39 +115,6 @@ int main (int argc, char *argv[]) {
     PGN pgn;
     pgn.FromFile(file_input);
 
-    
-    // Nom de fichier en sortie
-    std::string outname;
-
-    // Si l'option "-o " a été utilisé
-    if(output == true){
-
-        // Tester si le nom d'ouput donné contient au moins 4 caractères et contient ".tex" à la fin de celui-ci
-        if ( file_output.length() >= 4 && file_output.substr(file_output.length()-4, file_output.length()) == ".tex" ) {
-
-            outname = file_output;
-
-        // Si il n'y a pas de ".tex" indiqué dans le nom souhaité, rajouter un ".tex" à la fin de celui-ci
-        } else if ( file_output.substr(file_output.length()-1, file_output.length()) == "/" ) {
-
-            std::cerr << RED "Error : Output file name is incorrect" RESET << std::endl;
-
-            exit(EXIT_FAILURE);
-
-        } else {
-
-            outname = file_output + ".tex";
-
-        }
-
-    } else {
-
-        file_output = file_input.substr((file_input.find_last_of("/") + 1 ));
-        file_output = file_output.substr(0, file_output.length() - 4);
-        outname = file_output + ".tex";
-    }
-    
-    std::ofstream outfile(outname);
     std::stringstream buffer;
 
     // Création de l'entête du document
@@ -398,6 +365,39 @@ int main (int argc, char *argv[]) {
     
     // Fin du document
     buffer << "\\end{document}";
+
+    // Nom de fichier en sortie
+    std::string outname;
+
+    // Si l'option "-o " a été utilisé
+    if(output == true){
+
+        // Tester si le nom d'ouput donné contient au moins 4 caractères et contient ".tex" à la fin de celui-ci
+        if ( file_output.length() >= 4 && file_output.substr(file_output.length()-4, file_output.length()) == ".tex" ) {
+
+            outname = file_output;
+
+        // Si il n'y a pas de ".tex" indiqué dans le nom souhaité, rajouter un ".tex" à la fin de celui-ci
+        } else if ( file_output.substr(file_output.length()-1, file_output.length()) == "/" ) {
+
+            std::cerr << RED "Error : Output file name is incorrect" RESET << std::endl;
+
+            exit(EXIT_FAILURE);
+
+        } else {
+
+            outname = file_output + ".tex";
+
+        }
+
+    } else {
+
+        file_output = file_input.substr((file_input.find_last_of("/") + 1 ));
+        file_output = file_output.substr(0, file_output.length() - 4);
+        outname = file_output + ".tex";
+    }
+    
+    std::ofstream outfile(outname);
 
     outfile << buffer.str();
 
