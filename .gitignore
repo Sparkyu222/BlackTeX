@@ -4,6 +4,8 @@
 pgnp/
 build/
 *.tex
+examples/*
+!examples/example.pgn
 
 ## C++
 
