@@ -1,8 +1,10 @@
 # BlackTeX
----
-BlackTeX is a PGN to LaTeX converter, you just need to input a PGN file and it will convert the file into a beautiful TEX file.
 
-#### Usage
+### About this project
+BlackTeX is a PGN to LaTeX converter, you just need to input a PGN file and it will convert the file into a beautiful TEX file.
+This is a college project.
+
+### Usage
 Basic :
 ```bash
 $ blacktex <input_file>
@@ -19,8 +21,8 @@ $ blacktex -i <input_file> -o <output_file> -n <counts>
 > 
 > `-n` : specify the number of counts before showing the chessboard in the output
 
-#### Building
-To build the image, you just need to execute the `build.sh` script :
+### Building
+To build the converter, you just need to execute the `build.sh` script :
 ```bash
 $ chmod u+x build.sh
 $ ./build.sh
