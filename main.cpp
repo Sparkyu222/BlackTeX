@@ -31,7 +31,7 @@ int main (int argc, char *argv[]) {
     bool output = false;
 
     // Nombre désiré de count par défaut avant affichage du plateau visuel
-    int hmperMain = 2;
+    int hmperMain = 4;
 
     bool debug = false;
 
@@ -172,20 +172,14 @@ int main (int argc, char *argv[]) {
     try {
 
         checkpgn.ParseNextGame();
-        checkpgn.STRCheck();
 
     // Si la première game n'a pas été trouvé
     } catch (const NoGameFound& e) {
 
-        std::cerr << RED "Error: Input file is not a valid PGN file, no game found." RESET << std::endl;
+        std::cerr << RED "Error: Input file is not a valid PGN file." RESET << std::endl;
         exit(EXIT_FAILURE);
 
-    // Si il n'y pas les sept TAG de base dans la première game
-    }catch (const STRCheckFailed& e) {
-
-        std::cerr << RED "Error: Input file is not a valid PGN file, Seven Tag Roaster check failed" RESET << std::endl;
-        exit(EXIT_FAILURE);
-
+    // Si il n'y pas les sept TAGS de base dans la première game
     }
 
     std::cout << YELLOW "Fichier trouvé, tentative de conversion." RESET << std::endl;
@@ -212,47 +206,119 @@ int main (int argc, char *argv[]) {
 
     // Variable pour compter le nombre de games
     int count=1;
+    
+    bool endfile = false;
 
     while (true) {
 
-        // On tente d'analyser une game
-        try {
+        bool strcheck = false;
 
-            pgn.ParseNextGame();
+        // Boucle pour reparser une game si le STR fail
+        while (strcheck == false) {
 
-            std::cout << "Game n°" << count << ":" <<std::endl;
-            count++;
+            // On tente d'analyser une game
+            try {
+                
+                strcheck = true;
 
-        // Si il n'y a pas de game
-        } catch (const NoGameFound& e) {
+                pgn.ParseNextGame();
 
-            std::cout << RED "Pas de nouvelle game trouvée, fin du fichier atteint." RESET << std::endl;
+                std::cout << "Game n°" << count << ":" <<std::endl;
+                count++;
+
+                pgn.STRCheck();
+
+            // Si il n'y a pas de game, fin du fichier atteint
+            } catch (const NoGameFound& e) {
+
+                std::cout << RED "Pas de nouvelle game trouvée, fin du fichier atteint." RESET << std::endl;
+                endfile = true;
+                break;
+
+            // Si la game ne passe pas le STR check
+            } catch (const STRCheckFailed& e) {
+
+                std::cout << RED "Error: Seven Tag Roaster check failed, skipping game..." RESET << std::endl;
+
+                strcheck = false;
+
+            }
+
+        }
+
+        // Si on atteint la fin du fichier
+        if (endfile == true) {
+
             break;
 
         }
 
         std::cout << PURPLE "J'ai passé le try/catch !" RESET << std::endl;
 
+        // Initiation de la vairable qui contient les objets pour les half-moves
         HalfMove *m = new HalfMove();
         pgn.GetMoves(m);
 
-        // Entête et corps du jeu actuel
+        // Impression des tags STR
         buffer
         << "\\chessevent{" << pgn.GetTagValue("Event") << "}\n"
-
         << "\\chessopening{" << pgn.GetTagValue("Site") << "}\n\n"
-
         << "Date : " << pgn.GetTagValue("Date") << "\n\n"
         << "Round : " << pgn.GetTagValue("Round") << "\n\n"
         << "Result : " << pgn.GetResult() << "\n\n"
-
         << "\\whitename{" << pgn.GetTagValue("White") << "}\n\n"
         << "\\blackname{" << pgn.GetTagValue("Black") << "}\n\n"
-        << "\\ECO{" << pgn.GetTagValue("ECO") << "}\n\n"
-        << "\\whiteelo{?}\n\n"
-        << "\\blackelo{?}\n\n"
-        << "Plycount : " << pgn.GetTagValue("PlyCount")  << "\n\n"
 
+        << "\\whiteelo{?}\n\n"
+        << "\\blackelo{?}\n\n";
+
+        // Création de la variable tampon pour les tags optionnels
+        std::string tag;
+
+        // Tester si le tag ECO existe
+        try {
+
+           tag = pgn.GetTagValue("ECO");
+
+        } catch (const InvalidTagName& e) {
+
+            // Ne rien faire si non trouvé
+
+        }
+
+        // Imprimmer le tag ECO s'il existe
+        if (!tag.empty()) {
+
+            buffer << "\\ECO{" << tag << "}\n\n";
+
+        }
+
+        // Effacer le contenu de la variable tampon
+        tag.clear();
+
+        // Teser si le tag PlyCount existe
+        try {
+
+           tag = pgn.GetTagValue("PlyCount");
+
+        } catch (const InvalidTagName& e) {
+
+            // Ne rien faire si non trouvé
+
+        }
+
+        // Imprimmer le tag PlyCount s'il existe
+        if (!tag.empty()) {
+
+            buffer << "Plycount : " << tag  << "\n\n";
+            
+        }
+
+        // Effacer le contenu de la variable tampon
+        tag.clear();
+
+        // Insertion de l'entête de la game actuelle
+        buffer
         << "\\makegametitle\n"
         << "\\begin{multicols}{2}\n"
         << "\\noindent\n"
@@ -262,7 +328,7 @@ int main (int argc, char *argv[]) {
         << "\\mainline{";
 
         int movesnbr = hmperMain*2;                                             // Conversion nombre de count en nombre de half-moves (x2)
-        bool secondhalf = false;                                                // Compte du half-move actuel dans le count, contient deux position : "0" et "1" pour représenter le premier et le deuxième half-move du count
+        bool secondhalf = false;                                                // Compte du half-move actuel dans le count, contient deux position : "false" et "true" pour représenter le premier et le deuxième half-move du count
         int hmcount = 0;                                                        // Compte du half-move actuel dans la mainline
         bool firstmove = true, mainline_end = false, commenthere = false;       // Valeurs booleans pour les conditions
 
@@ -304,7 +370,7 @@ int main (int argc, char *argv[]) {
                 buffer << m->GetHalfMoveAt(i)->count << ". ";
                 secondhalf = false;
 
-            // Incrémenter le comptage de count
+            // Dire qu'on au second half-move
             } else {
 
                 secondhalf = true;
@@ -337,8 +403,8 @@ int main (int argc, char *argv[]) {
 
             }
 
-            // Insertion de variations
-            // Si il y a une variation dans le move actuel, initier l'écriture des varations
+            /// Insertion de variations
+            // Si il y a une variation dans le half-move actuel, initier l'écriture des varations
             if (m->GetHalfMoveAt(i)->variations.size() != 0) {
 
                 // Comptage de variante dans le half-move
@@ -357,7 +423,7 @@ int main (int argc, char *argv[]) {
 
                 } 
 
-                // Initier la variable de reouverture de mainline
+                // Initier la variable de reouverture de mainline pour le prochain half-move
                 varORcom = true;                
 
                 // Permet de savoir quand on passe à la deuxième variante si le half-move contient plusieurs varientes
@@ -417,7 +483,7 @@ int main (int argc, char *argv[]) {
 
             }
 
-            // Réouverture d'une mainline si la précédente a été intérompue par une variant ou un commentaire
+            // Réouverture d'une mainline si la précédente a été interrompue par une variant ou un commentaire
             if (varORcom == true) {
 
                 buffer
