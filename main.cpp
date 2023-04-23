@@ -97,24 +97,45 @@ int main (int argc, char *argv[]) {
         
     }
 
-    std::cout << CYAN "Début de la fonction main.\n" RESET << std::endl;
 
+
+    std::cout << CYAN "Début de la fonction main." RESET << std::endl;
+
+
+
+
+    /// --- TEST DE L'INPUT ---
+    // Tester si l'utilisateur n'a pas fourni de path vers l'input
     if(file_input == ""){
 
         std::cerr << RED"Error : Input file is missing." RESET << std::endl;
         
         exit(EXIT_FAILURE);
 
-    } else {
+    }
 
-        std::cout << YELLOW "Fichier trouvé, tentative de conversion." RESET << std::endl;
+    // Insérer l'input dans un stream
+    std::ifstream input(file_input);
+
+    // Tester si le fichier existe, et peut être lu
+    if (!input.good()) {
+
+        std::cerr << RED"Error : Input file does not exists/can't be read." RESET << std::endl;
+        exit(EXIT_FAILURE);
 
     }
-    
+
+    // Fermer le stream
+    input.close();
+
+
+
+
+    /// --- TEST DE L'OUTPUT ---
     // Nom de fichier en sortie
     std::string outname;
 
-    // Si l'option "-o " a été utilisé
+    // Si l'option "-o" a été utilisé
     if(output == true){
 
         // Tester si le nom d'ouput donné contient au moins 4 caractères et contient ".tex" à la fin de celui-ci
@@ -122,25 +143,52 @@ int main (int argc, char *argv[]) {
 
             outname = file_output;
 
-        // Si il n'y a pas de ".tex" indiqué dans le nom souhaité, rajouter un ".tex" à la fin de celui-ci
+        // Tester si me dernier caractère de l'output donné par l'utilisateur est "/"
         } else if ( file_output.substr(file_output.length()-1, file_output.length()) == "/" ) {
 
             std::cerr << RED "Error : Output file name is incorrect" RESET << std::endl;
 
             exit(EXIT_FAILURE);
 
+        // Si il n'y a pas de ".tex" indiqué dans le nom souhaité, rajouter un ".tex" à la fin de celui-ci
         } else {
 
             outname = file_output + ".tex";
 
         }
 
+    // Si l'option "-o" n'a pas utilisé, simplement prendre l'input et rajouter ".tex"
     } else {
 
         file_output = file_input.substr((file_input.find_last_of("/") + 1 ));
         file_output = file_output.substr(0, file_output.length() - 4);
         outname = file_output + ".tex";
     }
+
+    // Teser si l'input est un fichier PGN valide
+    PGN checkpgn;
+    checkpgn.FromFile(file_input);
+
+    try {
+
+        checkpgn.ParseNextGame();
+        checkpgn.STRCheck();
+
+    // Si la première game n'a pas été trouvé
+    } catch (const NoGameFound& e) {
+
+        std::cerr << RED "Error: Input file is not a valid PGN file, no game found." RESET << std::endl;
+        exit(EXIT_FAILURE);
+
+    // Si il n'y pas les sept TAG de base dans la première game
+    }catch (const STRCheckFailed& e) {
+
+        std::cerr << RED "Error: Input file is not a valid PGN file, Seven Tag Roaster check failed" RESET << std::endl;
+        exit(EXIT_FAILURE);
+
+    }
+
+    std::cout << YELLOW "Fichier trouvé, tentative de conversion." RESET << std::endl;
 
     // Insérer le chemin du fichier PGN dans le parser
     PGN pgn;
@@ -167,6 +215,7 @@ int main (int argc, char *argv[]) {
 
     while (true) {
 
+        // On tente d'analyser une game
         try {
 
             pgn.ParseNextGame();
@@ -174,6 +223,7 @@ int main (int argc, char *argv[]) {
             std::cout << "Game n°" << count << ":" <<std::endl;
             count++;
 
+        // Si il n'y a pas de game
         } catch (const NoGameFound& e) {
 
             std::cout << RED "Pas de nouvelle game trouvée, fin du fichier atteint." RESET << std::endl;
@@ -185,8 +235,6 @@ int main (int argc, char *argv[]) {
 
         HalfMove *m = new HalfMove();
         pgn.GetMoves(m);
-
-        // Trouver les commentaires :
 
         // Entête et corps du jeu actuel
         buffer
