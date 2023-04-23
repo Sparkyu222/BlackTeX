@@ -3,7 +3,9 @@
 ### About this project
 BlackTeX is a PGN to LaTeX converter, you just need to input a PGN file and it will convert the file into a beautiful TEX file.
 
-This is a college project made by [Evios17](https://github.com/Evios17), [Sparkyu222](https://github.com/Sparkyu222) and [ch2792](https://github.com/ch2792).
+This repository is one component of a two-part college project aimed at converting PGN files to LaTeX format. Written in C++, it contains the conversion software, while [the other part of the project](https://github.com/Evios17/r208-web) is a PHP-based front-end web page that relies on this software to function.
+
+This project was made with ❤️ by [Evios17](https://github.com/Evios17), [Sparkyu222](https://github.com/Sparkyu222) and [ch2792](https://github.com/ch2792)
 
 ### Usage
 Basic usage :
