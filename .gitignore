@@ -6,6 +6,7 @@ build/
 *.tex
 examples/*
 !examples/example.pgn
+*.pgn
 
 ## C++
 
