@@ -500,6 +500,21 @@ int main (int argc, char *argv[]) {
         }
 
         buffer << "}\n";
+
+        buffer << "\\textbf{Result: ";
+
+        if (m->GetHalfMoveAt(m->GetLength()-1)->isBlack) {
+
+            buffer << "Black ";
+
+        } else {
+
+            buffer << "White ";
+
+        }
+
+        buffer << "wins! (" << pgn.GetResult() << ")}\n";
+
         buffer << "\\end{multicols}\n";
 
         buffer << "\\newpage\n\n";
