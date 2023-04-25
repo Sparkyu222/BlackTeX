@@ -1,10 +1,10 @@
 #include "PGN.hpp"
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// #include <fstream>
+// #include <sstream>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 #include <unistd.h>
 using namespace pgnp;
 

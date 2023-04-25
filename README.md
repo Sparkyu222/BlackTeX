@@ -10,6 +10,8 @@ This repository is one component of a two-part college project aimed at converti
 This project was made with ❤️ by [Evios17](https://github.com/Evios17), [Sparkyu222](https://github.com/Sparkyu222) and [ch2792](https://github.com/ch2792)
 
 ### Usage
+
+**Dans le dossier build/**
 Basic usage :
 ```bash
 $ blacktex <input_file>
