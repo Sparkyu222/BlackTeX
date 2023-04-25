@@ -11,10 +11,11 @@ This project was made with ❤️ by [Evios17](https://github.com/Evios17), [Spa
 
 ### Usage
 
-**Dans le dossier build/**
+**In the build/ folder**
+
 Basic usage :
 ```bash
-$ blacktex <input_file>
+$ blacktex -i <input_file>
 ```
 > This command will convert the PGN input file to a TEX file with the same name as the input
 
