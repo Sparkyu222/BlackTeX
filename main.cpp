@@ -57,8 +57,6 @@ int main (int argc, char *argv[]) {
         switch (opt) {
             case 'i' :                                                                                            // entrée
                 file_input = optarg;
-
-
                 break;
 
             case 'o' :                                                                                            // sortie
@@ -93,6 +91,7 @@ int main (int argc, char *argv[]) {
                 std::cout << YELLOW "   -c --counts\t" CYAN " -- Number of moves before showing the chessboard" RESET << std::endl;
 
                 std::cout << "\nFlags :\n" << std::endl;
+                std::cout << YELLOW "   -n --no-nags\t" CYAN " -- Do not print NAGs in the output for non-UTF-8 compatibility" RESET << std::endl;
                 std::cout << YELLOW "   -s --stats\t" CYAN " -- Turn on stat mode" RESET << std::endl;
                 std::cout << YELLOW "   -d --debug\t" CYAN " -- Turn on debug mode" RESET << std::endl;
                 std::cout << YELLOW "   -h --help\t" CYAN " -- Show help" RESET << std::endl;
