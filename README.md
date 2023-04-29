@@ -21,13 +21,13 @@ $ blacktex -i <input_file>
 
 You can also use options :
 ```bash
-$ blacktex -i <input_file> -o <output_file> -n <counts>
+$ blacktex -i <input_file> -o <output_file> -c <counts>
 ```
 > `-i`: specify the input file
 > 
 > `-o` : specify the output file
 > 
-> `-n` : specify the number of counts before showing the chessboard in the output
+> `-c` : specify the number of counts before showing the chessboard in the output
 
 ### Building
 To build the converter, you just need to execute the `build.sh` script :

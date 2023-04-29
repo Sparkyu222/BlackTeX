@@ -1,5 +1,6 @@
 #include "PGN.hpp"
 #include <iostream>
+#include <getopt.h>
 // #include <fstream>
 // #include <sstream>
 // #include <stdio.h>
@@ -26,8 +27,6 @@ int main (int argc, char *argv[]) {
         return EXIT_FAILURE;
     #endif
 
-    int opt;
-
     std::string file_input;
     std::string file_output;
     bool output = false;
@@ -35,75 +34,95 @@ int main (int argc, char *argv[]) {
     // Nombre désiré de count par défaut avant affichage du plateau visuel
     int hmperMain = 4;
 
-    bool debug = false;
+    bool debug = false, showNAG = true;
 
-    while ((opt = getopt (argc, argv, "i:o:n:sdhv")) != -1) {
+
+
+    /// --- ARGUMENTS DE COMMANDES ---
+    struct option long_options[] = {
+        {"help", no_argument, NULL, 'h'},
+        {"input", required_argument, NULL, 'i'},
+        {"output", required_argument, NULL, 'o'},
+        {"counts", required_argument, NULL, 'c'},
+        {"no-nags", no_argument, NULL, 'n'},
+        {"stats", no_argument, NULL, 's'},
+        {"debug", no_argument, NULL, 'd'},
+        {"version", no_argument, NULL, 'v'},
+        {0, 0, 0, 0}
+    };
+
+    int opt, option_index = 0;
+
+    while ((opt = getopt_long(argc, argv, "i:o:n:sdhv", long_options, &option_index)) != -1) {
         switch (opt) {
             case 'i' :                                                                                            // entrée
                 file_input = optarg;
 
                 std::cout << YELLOW "Input file name : " RESET << file_input << std::endl;
-
                 break;
+
             case 'o' :                                                                                            // sortie
                 output = true;
-
                 file_output = optarg;
-
                 std::cout << YELLOW "Output file name : " RESET << file_output << std::endl;
-
                 break;
-            case 'n' :                                                                                            // nombre de cout par mainline
+
+            case 'c' :                                                                                            // nombre de cout par mainline
                 hmperMain = atoi(optarg);
-
                 break;
+
+            case 'n' :                                                                                            // ne pas afficher les NAGs
+                showNAG = false;
+                break;
+
             case 's' :                                                                                            // statistiques du fichier pgn
                 puts("in -o");
                 return(EXIT_SUCCESS);
-
                 break;
+
             case 'd' :                                                                                            // mode debug
+                std::cout << "DEBUG" << std::endl;
                 debug = true;
                 return(EXIT_SUCCESS);
-
                 break;
+
             case 'h' :                                                                                            // afficher l'aide
                 std::cout << "\nAuthors : " YELLOW "Software made by Antoine DORO, Lukas BOYER and Cylian HOUTMANN.\n" RESET << std::endl;
-                std::cout << "Description : " YELLOW "BlackLaTeX is a trivial PGN to TeX converter. You simply need to input a PGN file, and it will print you a beautiful TeX document of your chess games. You can also indicate an output and the number of counts before showing a chessboard.\n" RESET << std::endl;
+                std::cout << "Description : " YELLOW "BlackTeX is a trivial PGN to TeX converter. You simply need to input a PGN file, and it will print you a beautiful TeX document of your chess games. You can also indicate an output and the number of counts before showing a chessboard.\n" RESET << std::endl;
                 
                 std::cout << "Options :\n" << std::endl;
-                std::cout << YELLOW "   -i\t" CYAN " -- Path of the input PGN file" RESET << std::endl;
-                std::cout << YELLOW "   -o\t" CYAN " -- Name of the output TEX file" RESET << std::endl;
-                std::cout << YELLOW "   -n\t" CYAN " -- Number of moves before showing the chessboard" RESET << std::endl;
+                std::cout << YELLOW "   -i --input\t" CYAN " -- Path of the input PGN file" RESET << std::endl;
+                std::cout << YELLOW "   -o --output\t" CYAN " -- Name of the output TEX file" RESET << std::endl;
+                std::cout << YELLOW "   -c --counts\t" CYAN " -- Number of moves before showing the chessboard" RESET << std::endl;
 
                 std::cout << "\nFlags :\n" << std::endl;
-                std::cout << YELLOW "   -s\t" CYAN " -- Turn on stat mode" RESET << std::endl;
-                std::cout << YELLOW "   -d\t" CYAN " -- Turn on debug mode" RESET << std::endl;
-                std::cout << YELLOW "   -h\t" CYAN " -- Show help" RESET << std::endl;
-                std::cout << YELLOW "   -v\t" CYAN " -- Show version\n" RESET << std::endl;
+                std::cout << YELLOW "   -s --stats\t" CYAN " -- Turn on stat mode" RESET << std::endl;
+                std::cout << YELLOW "   -d --debug\t" CYAN " -- Turn on debug mode" RESET << std::endl;
+                std::cout << YELLOW "   -h --help\t" CYAN " -- Show help" RESET << std::endl;
+                std::cout << YELLOW "   -v --version\t" CYAN " -- Show version\n" RESET << std::endl;
 
-                std::cout << "Example : " PURPLE << argv[0] << BLUE " -i" PURPLE " input.pgn " BLUE "-o" PURPLE " output.tex " BLUE "-n" PURPLE " 5\n" RESET << std::endl;
+                std::cout << "Example : " PURPLE << argv[0] << BLUE " -i" PURPLE " input.pgn " BLUE "-o" PURPLE " output.tex " BLUE "-c" PURPLE " 5\n" RESET << std::endl;
 
                 exit(EXIT_SUCCESS);
-
                 break;
+
             case 'v':                                                                                            // -v : affiche la version
                 std::cout << "\nBlackLatex " GREEN "version 1.0\n" RESET << std::endl;
-
                 exit(EXIT_SUCCESS);
-
                 break;
+
             default :
                 std::cerr << RED "ERROR: Wrong syntax, use -h to see available options." RESET << std::endl;
-
                 exit(EXIT_FAILURE);
+                break;
         }
         
     }
 
 
 
-    std::cout << CYAN "Start of the main function." RESET << std::endl;
+
+    if (debug) std::cout << CYAN "Start of the main function." RESET << std::endl;
 
 
 
@@ -404,11 +423,15 @@ int main (int argc, char *argv[]) {
             // Insertion du half-move dans la mainline
             buffer << m->GetHalfMoveAt(i)->move << " ";
 
-            // Insertion d'un NAG si présent
-            if (m->GetHalfMoveAt(i)->NAG != 0) {
+            // Si showNAG est activé
+            if (showNAG) {
 
-                buffer << "\\xskakcomment{\\DejaSans\\textcolor{lightgray}{ " << NAG[m->GetHalfMoveAt(i)->NAG] << " \\rmfamily}} ";
+                // Insertion d'un NAG si présent
+                if (m->GetHalfMoveAt(i)->NAG != 0) {
 
+                    buffer << "\\xskakcomment{\\DejaSans\\textcolor{lightgray}{ " << NAG[m->GetHalfMoveAt(i)->NAG] << " \\rmfamily}} ";
+
+                }
 
             }
 
@@ -488,7 +511,20 @@ int main (int argc, char *argv[]) {
 
                     }
                     
-                    buffer << m->GetHalfMoveAt(i)->variations[j]->move << "} ";
+                    buffer << m->GetHalfMoveAt(i)->variations[j]->move << " ";
+
+                    if (showNAG) {
+
+                        // Si un NAG est présent, l'insérer...
+                        if (m->GetHalfMoveAt(i)->variations[j]->NAG != 0) {
+
+                            buffer << "\\xskakcomment{\\DejaSans\\textcolor{lightgray}{ " << NAG[m->GetHalfMoveAt(i)->variations[j]->NAG] << " \\rmfamily }} ";
+
+                        }
+
+                    }
+
+                    buffer << "} ";
 
                     // Si il y a un commentaire dans la variation, l'insérer
                     if (!m->GetHalfMoveAt(i)->variations[j]->comment.empty()) {
@@ -550,7 +586,9 @@ int main (int argc, char *argv[]) {
 
     outfile << buffer.str();
 
-    std::cout << CYAN "End of the program." RESET << std::endl;
+    std::cout << GREEN "The file has been successfully converted." RESET << std::endl;
+
+    if (debug) std::cout << CYAN "End of the program." RESET << std::endl;
 
     return EXIT_SUCCESS;
 
