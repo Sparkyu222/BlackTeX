@@ -58,13 +58,12 @@ int main (int argc, char *argv[]) {
             case 'i' :                                                                                            // entrée
                 file_input = optarg;
 
-                std::cout << YELLOW "Input file name : " RESET << file_input << std::endl;
+
                 break;
 
             case 'o' :                                                                                            // sortie
                 output = true;
                 file_output = optarg;
-                std::cout << YELLOW "Output file name : " RESET << file_output << std::endl;
                 break;
 
             case 'c' :                                                                                            // nombre de cout par mainline
@@ -81,9 +80,7 @@ int main (int argc, char *argv[]) {
                 break;
 
             case 'd' :                                                                                            // mode debug
-                std::cout << "DEBUG" << std::endl;
                 debug = true;
-                return(EXIT_SUCCESS);
                 break;
 
             case 'h' :                                                                                            // afficher l'aide
@@ -119,10 +116,13 @@ int main (int argc, char *argv[]) {
         
     }
 
+    if (debug) {
 
+        std::cout << YELLOW "Input file name : " RESET << file_input << std::endl;
+        std::cout << YELLOW "Output file name : " RESET << file_output << std::endl;
+        std::cout << CYAN "Start of the main function." RESET << std::endl;
 
-
-    if (debug) std::cout << CYAN "Start of the main function." RESET << std::endl;
+    }
 
 
 
@@ -202,7 +202,7 @@ int main (int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    std::cout << YELLOW "File found, attempting conversion. " RESET << std::endl;
+    if (debug) std::cout << YELLOW "File found, attempting conversion. " RESET << std::endl;
 
     // Insérer le chemin du fichier PGN dans le parser
     PGN pgn;
@@ -262,14 +262,14 @@ int main (int argc, char *argv[]) {
             // Si il n'y a pas de game, fin du fichier atteint
             } catch (const NoGameFound& e) {
 
-                std::cout << RED "No new game found, end of file reached." RESET << std::endl;
+                if (debug) std::cout << RED "No new game found, end of file reached." RESET << std::endl;
                 endfile = true;
                 break;
 
             // Si la game ne passe pas le STR check
             } catch (const STRCheckFailed& e) {
 
-                std::cout << RED "Error: Seven Tag Roaster check failed, skipping game..." RESET << std::endl;
+                if (debug) std::cout << RED "Error: Seven Tag Roaster check failed, skipping game..." RESET << std::endl;
 
                 strcheck = false;
 
@@ -575,7 +575,7 @@ int main (int argc, char *argv[]) {
 
         buffer << "\\newpage\n\n";
 
-        std::cout << std::endl;
+        if (debug) std::cout << std::endl;
 
     }
     
