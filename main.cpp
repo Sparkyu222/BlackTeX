@@ -17,6 +17,8 @@ using namespace pgnp;
 #define CYAN "\033[0;36m"
 #define RESET "\033[0m"
 
+void NAGindex (std::string NAG[256]);
+
 int main (int argc, char *argv[]) {
 
     #ifdef _WIN32
@@ -66,13 +68,15 @@ int main (int argc, char *argv[]) {
 
                 break;
             case 'h' :                                                                                            // afficher l'aide
-                std::cout << "\nAuthor : " YELLOW "Software made by Antoine DORO, Lukas BOYER and Cylian HOUTMANN.\n" RESET << std::endl;
+                std::cout << "\nAuthors : " YELLOW "Software made by Antoine DORO, Lukas BOYER and Cylian HOUTMANN.\n" RESET << std::endl;
                 std::cout << "Description : " YELLOW "BlackLaTeX is a trivial PGN to TeX converter. You simply need to input a PGN file, and it will print you a beautiful TeX document of your chess games. You can also indicate an output and the number of counts before showing a chessboard.\n" RESET << std::endl;
                 
                 std::cout << "Options :\n" << std::endl;
                 std::cout << YELLOW "   -i\t" CYAN " -- Path of the input PGN file" RESET << std::endl;
                 std::cout << YELLOW "   -o\t" CYAN " -- Name of the output TEX file" RESET << std::endl;
                 std::cout << YELLOW "   -n\t" CYAN " -- Number of moves before showing the chessboard" RESET << std::endl;
+
+                std::cout << "\nFlags :\n" << std::endl;
                 std::cout << YELLOW "   -s\t" CYAN " -- Turn on stat mode" RESET << std::endl;
                 std::cout << YELLOW "   -d\t" CYAN " -- Turn on debug mode" RESET << std::endl;
                 std::cout << YELLOW "   -h\t" CYAN " -- Show help" RESET << std::endl;
@@ -178,8 +182,6 @@ int main (int argc, char *argv[]) {
 
         std::cerr << RED "Error: Input file is not a valid PGN file." RESET << std::endl;
         exit(EXIT_FAILURE);
-
-    // Si il n'y pas les sept TAGS de base dans la première game
     }
 
     std::cout << YELLOW "Fichier trouvé, tentative de conversion." RESET << std::endl;
@@ -187,6 +189,12 @@ int main (int argc, char *argv[]) {
     // Insérer le chemin du fichier PGN dans le parser
     PGN pgn;
     pgn.FromFile(file_input);
+
+    // Initialisation du tableau index des NAGs
+    std::string NAG[256];
+
+    // Indexation des NAGs avec leurs ID respectif
+    NAGindex(NAG);
 
     std::stringstream buffer;
 
@@ -201,11 +209,16 @@ int main (int argc, char *argv[]) {
     << "\\usepackage{xskak}\n"
     << "\\usepackage[top=1.5cm, bottom=2cm, left=1.5cm, right=1cm,headheight=15pt]{geometry}\n"
     << "\\usepackage{adjmulticol}\n"
-    << "\\usepackage{ragged2e}\n\n\n"
-    << "\\begin{document}\n\n";
+    << "\\usepackage{fontspec}\n"
+    << "\\usepackage{ragged2e}\n\n\n";
+
+    // Si l'affichage du NAG est activé
+    buffer << "\\newfontfamily{\\DejaSans}{DejaVu Sans}\n\n\n";
+
+    buffer << "\\begin{document}\n\n";
 
     // Variable pour compter le nombre de games
-    int count=1;
+    int count = 1;
     
     bool endfile = false;
 
@@ -255,7 +268,7 @@ int main (int argc, char *argv[]) {
 
         std::cout << PURPLE "J'ai passé le try/catch !" RESET << std::endl;
 
-        // Initiation de la vairable qui contient les objets pour les half-moves
+        // Initiation de la variable qui contient les objets pour les half-moves
         HalfMove *m = new HalfMove();
         pgn.GetMoves(m);
 
@@ -391,6 +404,14 @@ int main (int argc, char *argv[]) {
 
             // Insertion du half-move dans la mainline
             buffer << m->GetHalfMoveAt(i)->move << " ";
+
+            // Insertion d'un NAG si présent
+            if (m->GetHalfMoveAt(i)->NAG != 0) {
+
+                buffer << "\\xskakcomment{\\DejaSans\\textcolor{lightgray}{ " << NAG[m->GetHalfMoveAt(i)->NAG] << " \\rmfamily}} ";
+
+
+            }
 
             // Insertion de commentaire si présent
             if (!m->GetHalfMoveAt(i)->comment.empty()) {
@@ -533,4 +554,62 @@ int main (int argc, char *argv[]) {
     std::cout << CYAN "Fin du programme." RESET << std::endl;
 
     return EXIT_SUCCESS;
+
+}
+
+void NAGindex (std::string NAG[256]) {
+
+    NAG[1] = u8"\u0021";
+    NAG[2] = u8"\u003F";
+    NAG[3] = u8"\u203C";
+    NAG[4] = u8"\u2047";
+    NAG[5] = u8"\u2049";
+    NAG[6] = u8"\u2048";
+    NAG[7] = u8"\u25A1";
+    NAG[10] = u8"\u003D";
+    NAG[13] = u8"\u221E";
+    NAG[14] = u8"\u2A72";
+    NAG[15] = u8"\u2A71";
+    NAG[16] = u8"\u00B1";
+    NAG[17] = u8"\u2213";
+    NAG[18] = u8"\u002B\u002D";
+    NAG[19] = u8"\u002D\u002B";
+    NAG[22] = u8"\u2A00";
+    NAG[23] = u8"\u2A00";
+    NAG[26] = u8"\u25CB";
+    NAG[27] = u8"\u25CB";
+    NAG[32] = u8"\u27F3";
+    NAG[33] = u8"\u27F3";
+    NAG[36] = u8"\u2191";
+    NAG[37] = u8"\u2191";
+    NAG[40] = u8"\u2192";
+    NAG[41] = u8"\u2192";
+    NAG[44] = u8"\u2BF9";
+    NAG[45] = u8"\u2BF9";
+    NAG[132] = u8"\u21C6";
+    NAG[133] = u8"\u21C6";
+    NAG[138] = u8"\u2A01";
+    NAG[139] = u8"\u2A01";
+    NAG[140] = u8"\u2206";
+    NAG[141] = u8"\u2207";
+    NAG[142] = u8"\u2313";
+    NAG[143] = "<=";
+    NAG[144] = "==";
+    NAG[145] = "RR";
+    NAG[146] = "N";
+    NAG[238] = u8"\u25CB";
+    NAG[239] = u8"\u21D4";
+    NAG[240] = u8"\u21D7";
+    NAG[241] = u8"\u229E";
+    NAG[242] = u8"\u27EB";
+    NAG[243] = u8"\u27EA";
+    NAG[244] = u8"\u2715";
+    NAG[245] = u8"\u22A5";
+    NAG[249] = u8"\u2BFA";
+    NAG[250] = u8"\u2BFB";
+    NAG[251] = u8"\u2BFC";
+    NAG[252] = u8"\u2BFD";
+    NAG[254] = u8"\u221F";
+    NAG[255] = u8"\u2BFE";
+
 }
