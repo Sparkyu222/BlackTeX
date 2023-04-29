@@ -7,12 +7,9 @@ This repository is one component of a two-part college project aimed at converti
 
 [The other part of the project](https://github.com/Evios17/r208-web) is a PHP-based front-end web page that relies on this software in order to function.
 
-This project was made with ❤️ by [Evios17](https://github.com/Evios17), [Sparkyu222](https://github.com/Sparkyu222) and [ch2792](https://github.com/ch2792)
+This project was made with ❤️ by [Evios17](https://github.com/Evios17), [Sparkyu222](https://github.com/Sparkyu222) and [ch2792](https://github.com/ch2792).
 
 ### Usage
-
-**In the build/ folder**
-
 Basic usage :
 ```bash
 $ blacktex -i <input_file>
@@ -35,3 +32,4 @@ To build the converter, you just need to execute the `build.sh` script :
 $ chmod u+x build.sh
 $ ./build.sh
 ```
+> The executable will be placed in the `build/` folder
