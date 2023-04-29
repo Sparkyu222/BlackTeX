@@ -1,10 +1,10 @@
 #include "PGN.hpp"
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// #include <fstream>
+// #include <sstream>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 #include <unistd.h>
 using namespace pgnp;
 
@@ -22,7 +22,7 @@ void NAGindex (std::string NAG[256]);
 int main (int argc, char *argv[]) {
 
     #ifdef _WIN32
-        printf(ROUGE"Ce programme n'est pas compatible avec les systèmes Windows\n");
+        printf(ROUGE"This program is not compatible with Windows systems.\n");
         return EXIT_FAILURE;
     #endif
 
@@ -42,7 +42,7 @@ int main (int argc, char *argv[]) {
             case 'i' :                                                                                            // entrée
                 file_input = optarg;
 
-                std::cout << YELLOW "Nom du fichier en entrée : " RESET << file_input << std::endl;
+                std::cout << YELLOW "Input file name : " RESET << file_input << std::endl;
 
                 break;
             case 'o' :                                                                                            // sortie
@@ -50,7 +50,7 @@ int main (int argc, char *argv[]) {
 
                 file_output = optarg;
 
-                std::cout << YELLOW "Nom du fichier en sortie : " RESET << file_output << std::endl;
+                std::cout << YELLOW "Output file name : " RESET << file_output << std::endl;
 
                 break;
             case 'n' :                                                                                            // nombre de cout par mainline
@@ -103,8 +103,7 @@ int main (int argc, char *argv[]) {
 
 
 
-    std::cout << CYAN "Début de la fonction main." RESET << std::endl;
-
+    std::cout << CYAN "Start of the main function." RESET << std::endl;
 
 
 
@@ -184,7 +183,7 @@ int main (int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    std::cout << YELLOW "Fichier trouvé, tentative de conversion." RESET << std::endl;
+    std::cout << YELLOW "File found, attempting conversion. " RESET << std::endl;
 
     // Insérer le chemin du fichier PGN dans le parser
     PGN pgn;
@@ -236,7 +235,7 @@ int main (int argc, char *argv[]) {
 
                 pgn.ParseNextGame();
 
-                std::cout << "Game n°" << count << ":" <<std::endl;
+                if (debug) std::cout << "Game n°" << count << ":" <<std::endl;
                 count++;
 
                 pgn.STRCheck();
@@ -244,7 +243,7 @@ int main (int argc, char *argv[]) {
             // Si il n'y a pas de game, fin du fichier atteint
             } catch (const NoGameFound& e) {
 
-                std::cout << RED "Pas de nouvelle game trouvée, fin du fichier atteint." RESET << std::endl;
+                std::cout << RED "No new game found, end of file reached." RESET << std::endl;
                 endfile = true;
                 break;
 
@@ -266,7 +265,7 @@ int main (int argc, char *argv[]) {
 
         }
 
-        std::cout << PURPLE "J'ai passé le try/catch !" RESET << std::endl;
+        if (debug) std::cout << PURPLE "I passed the try/catch!" RESET << std::endl;
 
         // Initiation de la variable qui contient les objets pour les half-moves
         HalfMove *m = new HalfMove();
@@ -345,7 +344,7 @@ int main (int argc, char *argv[]) {
         int hmcount = 0;                                                        // Compte du half-move actuel dans la mainline
         bool firstmove = true, mainline_end = false, commenthere = false;       // Valeurs booleans pour les conditions
 
-        std::cout << YELLOW "Nombres de half-moves : " << m->GetLength() << RESET << std::endl;
+        if (debug) std::cout << YELLOW "Number of half-moves : " << m->GetLength() << RESET << std::endl;
 
         for (int i=0 ; i < m->GetLength() ; i++) {
 
@@ -551,7 +550,7 @@ int main (int argc, char *argv[]) {
 
     outfile << buffer.str();
 
-    std::cout << CYAN "Fin du programme." RESET << std::endl;
+    std::cout << CYAN "End of the program." RESET << std::endl;
 
     return EXIT_SUCCESS;
 

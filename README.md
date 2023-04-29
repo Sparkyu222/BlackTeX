@@ -10,9 +10,12 @@ This repository is one component of a two-part college project aimed at converti
 This project was made with ❤️ by [Evios17](https://github.com/Evios17), [Sparkyu222](https://github.com/Sparkyu222) and [ch2792](https://github.com/ch2792)
 
 ### Usage
+
+**In the build/ folder**
+
 Basic usage :
 ```bash
-$ blacktex <input_file>
+$ blacktex -i <input_file>
 ```
 > This command will convert the PGN input file to a TEX file with the same name as the input
 
