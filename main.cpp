@@ -230,7 +230,7 @@ int main (int argc, char *argv[]) {
     << "\\usepackage{ragged2e}\n\n\n";
 
     // Si l'affichage du NAG est activé
-    buffer << "\\newfontfamily{\\DejaSans}{DejaVu Sans}\n\n\n";
+    if (showNAG) buffer << "\\newfontfamily{\\DejaSans}{DejaVu Sans}\n\n\n";
 
     buffer << "\\begin{document}\n\n";
 
