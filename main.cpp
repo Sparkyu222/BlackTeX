@@ -558,17 +558,21 @@ int main (int argc, char *argv[]) {
 
         buffer << "\\textbf{Result: ";
 
-        if (m->GetHalfMoveAt(m->GetLength()-1)->isBlack) {
+        if(pgn.GetResult() == "1-0") {
+            
+            buffer << "White wins! (" << pgn.GetResult() << ")";
+            
+        }else if (pgn.GetResult() == "0-1") {
 
-            buffer << "Black ";
-
+            buffer << "Blacks wins! (" << pgn.GetResult() << ")";
+        
         } else {
 
-            buffer << "White ";
+            buffer << "Draw! (" << pgn.GetResult() << ")";
 
         }
 
-        buffer << "wins! (" << pgn.GetResult() << ")}\n";
+        buffer << "}\n";
 
         buffer << "\\end{multicols}\n";
 
