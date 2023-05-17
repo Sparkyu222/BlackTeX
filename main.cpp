@@ -226,11 +226,15 @@ int main (int argc, char *argv[]) {
     << "\\usepackage{xskak}\n"
     << "\\usepackage[top=1.5cm, bottom=2cm, left=1.5cm, right=1cm,headheight=15pt]{geometry}\n"
     << "\\usepackage{adjmulticol}\n"
-    << "\\usepackage{fontspec}\n"
     << "\\usepackage{ragged2e}\n\n\n";
 
     // Si l'affichage du NAG est activé
-    if (showNAG) buffer << "\\newfontfamily{\\DejaSans}{DejaVu Sans}\n\n\n";
+    if (showNAG) { 
+
+        buffer << "\\usepackage{fontspec}\n";
+        buffer << "\\newfontfamily{\\DejaSans}{DejaVu Sans}\n\n\n";
+
+    }
 
     buffer << "\\begin{document}\n\n";
 
