@@ -1,11 +1,7 @@
 #include "PGN.hpp"
 #include <iostream>
 #include <getopt.h>
-// #include <fstream>
-// #include <sstream>
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
+#include <vector>
 #include <unistd.h>
 using namespace pgnp;
 
@@ -18,6 +14,7 @@ using namespace pgnp;
 #define CYAN "\033[0;36m"
 #define RESET "\033[0m"
 
+void stats (std::string file_input, bool showNAG);
 void NAGindex (std::string NAG[256]);
 
 int main (int argc, char *argv[]) {
@@ -34,7 +31,7 @@ int main (int argc, char *argv[]) {
     // Nombre désiré de count par défaut avant affichage du plateau visuel
     int hmperMain = 4;
 
-    bool debug = false, showNAG = true;
+    bool debug = false, showNAG = true, statsmode = false;
 
 
 
@@ -73,8 +70,7 @@ int main (int argc, char *argv[]) {
                 break;
 
             case 's' :                                                                                            // statistiques du fichier pgn
-                puts("in -o");
-                return(EXIT_SUCCESS);
+                statsmode = true;
                 break;
 
             case 'd' :                                                                                            // mode debug
@@ -202,6 +198,8 @@ int main (int argc, char *argv[]) {
     }
 
     if (debug) std::cout << YELLOW "File found, attempting conversion. " RESET << std::endl;
+
+    if (statsmode) stats(file_input, showNAG);
 
     // Insérer le chemin du fichier PGN dans le parser
     PGN pgn;
@@ -598,6 +596,120 @@ int main (int argc, char *argv[]) {
     if (debug) std::cout << CYAN "End of the program." RESET << std::endl;
 
     return EXIT_SUCCESS;
+
+}
+
+// Nombres de games, le nom des joueurs, nombres de moves total
+void stats (std::string file_input, bool showNAG) {
+
+    PGN filestats;
+    filestats.FromFile(file_input);
+
+    std::vector<std::string> playername;
+
+    int gamecount = 0, plcount = 0, hmcount = 0, varcount = 0, nagcount = 0, comcount = 0;
+
+    while (true) {
+
+        try {
+
+            filestats.ParseNextGame();
+            gamecount++;
+
+
+        } catch (const NoGameFound& e) {
+
+            break;
+
+        }
+
+        HalfMove *m = new HalfMove();
+        filestats.GetMoves(m);
+
+        hmcount += m->GetLength();
+
+        bool playerexists = false;
+        std::string player = "White";
+
+        if (playername.size() != 0) {
+
+            for (int i=0; i < 2; i ++) {
+
+                if (i == 1) player = "Black";
+                bool playerfound = false;
+
+                for (int j=0; j < playername.size(); j++) {
+
+                    if (playername[j] == filestats.GetTagValue(player)) playerfound = true;
+                    
+                }
+
+                if (!playerfound) playername.push_back(filestats.GetTagValue(player));
+            
+            }
+
+        } else {
+
+            playername.push_back(filestats.GetTagValue("White"));
+            playername.push_back(filestats.GetTagValue("Black"));
+
+        }
+        
+        for (int i=0; i < m->GetLength(); i++) {
+
+            if (!m->GetHalfMoveAt(i)->comment.empty()) comcount++;
+            if (m->GetHalfMoveAt(i)->NAG != 0) nagcount++;
+            if (m->GetHalfMoveAt(i)->variations.size() != 0) {
+
+                varcount += m->GetHalfMoveAt(i)->variations.size();
+
+                for (int j=0; j < m->GetHalfMoveAt(i)->variations.size(); j++) {
+                    
+                    if (!m->GetHalfMoveAt(i)->variations[j]->comment.empty()) comcount++;
+                    if (m->GetHalfMoveAt(i)->variations[j]->NAG != 0);
+
+                }
+
+            }
+            
+        }
+
+    }
+
+    std::cout << "Number of games : " << PURPLE << gamecount << RESET << std::endl;
+
+    std::cout << "Total number of moves : " << PURPLE << hmcount/2 << RESET << std::endl;
+    
+    std::cout << "Total number of half-moves : " << PURPLE << hmcount << RESET << std::endl;
+
+    std::cout << "Total number of comments : " << PURPLE << comcount << RESET << std::endl;
+
+    std::cout << "Total number of variations : " << PURPLE << varcount << RESET << std::endl;
+
+    if (!showNAG) {
+        std::cout << "Total number of NAGs : " << RED << "Disabled" << RESET << std::endl;
+    } else {
+        std::cout << "Total number of NAGs : " << PURPLE << nagcount << RESET << std::endl;
+    }
+
+    std::cout << "Number of players : " << PURPLE << playername.size() << RESET << std::endl;
+    
+    std::cout << "Players included : ";
+
+    for (int i=0; i < playername.size(); i++) {
+
+        if (i == playername.size()-1) {
+
+            std::cout << PURPLE << playername[i] << RESET << ".\n";
+
+        } else {
+
+            std::cout << PURPLE << playername[i] << RESET << ", ";
+            
+        }
+        
+
+    }
 
 }
 
