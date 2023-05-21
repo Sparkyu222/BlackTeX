@@ -14,7 +14,7 @@ using namespace pgnp;
 #define CYAN "\033[0;36m"
 #define RESET "\033[0m"
 
-void stats (std::string file_input, bool showNAG);
+void stats (std::string file_input, bool showNAG, bool web);
 void NAGindex (std::string NAG[256]);
 
 int main (int argc, char *argv[]) {
@@ -31,7 +31,7 @@ int main (int argc, char *argv[]) {
     // Nombre désiré de count par défaut avant affichage du plateau visuel
     int hmperMain = 4;
 
-    bool debug = false, showNAG = true, statsmode = false;
+    bool debug = false, showNAG = true, statsmode = false, web = false;
 
 
 
@@ -44,6 +44,7 @@ int main (int argc, char *argv[]) {
         {"no-nags", no_argument, NULL, 'n'},
         {"stats", no_argument, NULL, 's'},
         {"debug", no_argument, NULL, 'd'},
+        {"web", no_argument, NULL, 'w'},
         {"version", no_argument, NULL, 'v'},
         {0, 0, 0, 0}
     };
@@ -77,6 +78,10 @@ int main (int argc, char *argv[]) {
                 debug = true;
                 break;
 
+            case 'w' :
+                web = true;
+                break;
+
             case 'h' :                                                                                            // afficher l'aide
                 std::cout << "\nAuthors : " YELLOW "Software made by Antoine DORO, Lukas BOYER and Cylian HOUTMANN.\n" RESET << std::endl;
                 std::cout << "Description : " YELLOW "BlackTeX is a trivial PGN to TeX converter. You simply need to input a PGN file, and it will print you a beautiful TeX document of your chess games. You can also indicate an output and the number of counts before showing a chessboard.\n" RESET << std::endl;
@@ -90,6 +95,7 @@ int main (int argc, char *argv[]) {
                 std::cout << YELLOW "   -n --no-nags\t" CYAN " -- Do not print NAGs in the output for non-UTF-8 compatibility" RESET << std::endl;
                 std::cout << YELLOW "   -s --stats\t" CYAN " -- Turn on stat mode" RESET << std::endl;
                 std::cout << YELLOW "   -d --debug\t" CYAN " -- Turn on debug mode" RESET << std::endl;
+                std::cout << YELLOW "   -w --web\t" CYAN " -- Disable color output to not print color macro in stdout" RESET << std::endl;
                 std::cout << YELLOW "   -h --help\t" CYAN " -- Show help" RESET << std::endl;
                 std::cout << YELLOW "   -v --version\t" CYAN " -- Show version\n" RESET << std::endl;
 
@@ -199,7 +205,7 @@ int main (int argc, char *argv[]) {
 
     if (debug) std::cout << YELLOW "File found, attempting conversion. " RESET << std::endl;
 
-    if (statsmode) stats(file_input, showNAG);
+    if (statsmode) stats(file_input, showNAG, web);
 
     // Insérer le chemin du fichier PGN dans le parser
     PGN pgn;
@@ -591,7 +597,7 @@ int main (int argc, char *argv[]) {
 
     outfile << buffer.str();
 
-    std::cout << GREEN "The file has been successfully converted." RESET << std::endl;
+    std::cout << (web ? "" : GREEN) << "The file has been successfully converted." << (web ? "" : RESET) << std::endl;
 
     if (debug) std::cout << CYAN "End of the program." RESET << std::endl;
 
@@ -600,7 +606,7 @@ int main (int argc, char *argv[]) {
 }
 
 // Nombres de games, le nom des joueurs, nombres de moves total
-void stats (std::string file_input, bool showNAG) {
+void stats (std::string file_input, bool showNAG, bool web) {
 
     PGN filestats;
     filestats.FromFile(file_input);
@@ -676,23 +682,23 @@ void stats (std::string file_input, bool showNAG) {
 
     }
 
-    std::cout << "Number of games : " << PURPLE << gamecount << RESET << std::endl;
+    std::cout << "Number of games : " << (web ? "" : PURPLE) << gamecount << (web ? "" : RESET) << std::endl;
 
-    std::cout << "Total number of moves : " << PURPLE << hmcount/2 << RESET << std::endl;
+    std::cout << "Total number of moves : " << (web ? "" : PURPLE) << hmcount/2 << (web ? "" : RESET) << std::endl;
     
-    std::cout << "Total number of half-moves : " << PURPLE << hmcount << RESET << std::endl;
+    std::cout << "Total number of half-moves : " << (web ? "" : PURPLE) << hmcount << (web ? "" : RESET) << std::endl;
 
-    std::cout << "Total number of comments : " << PURPLE << comcount << RESET << std::endl;
+    std::cout << "Total number of comments : " << (web ? "" : PURPLE) << comcount << (web ? "" : RESET) << std::endl;
 
-    std::cout << "Total number of variations : " << PURPLE << varcount << RESET << std::endl;
+    std::cout << "Total number of variations : " << (web ? "" : PURPLE) << varcount << (web ? "" : RESET) << std::endl;
 
     if (!showNAG) {
-        std::cout << "Total number of NAGs : " << RED << "Disabled" << RESET << std::endl;
+        std::cout << "Total number of NAGs : " << (web ? "" : RED) << "Disabled" << (web ? "" : RESET) << std::endl;
     } else {
-        std::cout << "Total number of NAGs : " << PURPLE << nagcount << RESET << std::endl;
+        std::cout << "Total number of NAGs : " << (web ? "" : PURPLE) << nagcount << (web ? "" : RESET) << std::endl;
     }
 
-    std::cout << "Number of players : " << PURPLE << playername.size() << RESET << std::endl;
+    std::cout << "Number of players : " << (web ? "" : PURPLE) << playername.size() << (web ? "" : RESET) << std::endl;
     
     std::cout << "Players included : ";
 
@@ -700,11 +706,11 @@ void stats (std::string file_input, bool showNAG) {
 
         if (i == playername.size()-1) {
 
-            std::cout << PURPLE << playername[i] << RESET << ".\n";
+            std::cout << (web ? "" : PURPLE) << playername[i] << (web ? "" : RESET) << ".\n";
 
         } else {
 
-            std::cout << PURPLE << playername[i] << RESET << ", ";
+            std::cout << (web ? "" : PURPLE)<< playername[i] << (web ? "" : RESET) << ", ";
             
         }
         
